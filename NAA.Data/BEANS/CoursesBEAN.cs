@@ -12,9 +12,9 @@ namespace NAA.Data.BEANS
         public string Name { get; set; }
         public string Description { get; set; }
         public string EntryReq { get; set; }
-        public int Tarif { get; set; }
+        public string Tarif { get; set; }
         public string University { get; set; }
-        public int NSS { get; set; }
+        public string NSS { get; set; }
         public string Qualification { get; set; }
 
         public CoursesBEAN() { }

@@ -14,38 +14,69 @@ namespace Universities.Services.Service
     {
 
         //private UniversitiesWebService.UniversitiesWebService _proxy;
-        private Sheffield.SheffieldWebService _proxy;
-        private Sheffield_Hallam.SHUWebService _proxy2;
+        private Sheffield.SheffieldWebService _sheffieldProxy;
+        private Sheffield_Hallam.SHUWebService _shuProxy;
 
         public UniversitiesService(){
-            _proxy = new Sheffield.SheffieldWebService();
-            _proxy2 = new Sheffield_Hallam.SHUWebService();
+            _sheffieldProxy = new Sheffield.SheffieldWebService();
+            _shuProxy = new Sheffield_Hallam.SHUWebService();
         }
 
-        public IList<Course> GetSHCourses()
+        //public IList<Course> GetSHCourses()
+        //{
+        //    IList<Course> _output = _proxy.SheffCourses().ToList();
+        //    return _output;
+        //}
+
+        //public IList<SHUCourse> GetSHHCourses()
+        //{
+        //    IList<SHUCourse> _output = _proxy2.SHUCourses().ToList();
+        //    return _output;
+        //}
+
+
+        public IList<NAA.Data.BEANS.CoursesBEAN> GetCoursesForUniversity(int universityId)
         {
-            IList<Course> _output = _proxy.SheffCourses().ToList();
-            return _output;
+            List<NAA.Data.BEANS.CoursesBEAN> _beans = new List<NAA.Data.BEANS.CoursesBEAN>();
+            if (universityId == 1)
+            {
+                IList<Course> _output = _sheffieldProxy.SheffCourses().ToList();
+                foreach (var output in _output)
+                {
+                    NAA.Data.BEANS.CoursesBEAN _bean = new NAA.Data.BEANS.CoursesBEAN();
+                    _bean.Id = output.Id;
+                    _bean.Name = output.Name;
+                    _bean.Description = output.Description;
+                    _bean.EntryReq = output.EntryReq;
+                    _bean.Tarif = output.Tarif.ToString();
+                    _bean.University = output.University;
+                    _bean.NSS = output.NSS.ToString();
+                    _bean.Qualification = output.Qualification;
+                    _beans.Add(_bean);
+                }
+                return _beans;
+            } else if (universityId == 2)
+            {
+                IList<SHUCourse> _output = _shuProxy.SHUCourses().ToList();
+                foreach (var output in _output)
+                {
+                    NAA.Data.BEANS.CoursesBEAN _bean = new NAA.Data.BEANS.CoursesBEAN();
+                    _bean.Id = output.CourseId;
+                    _bean.Name = output.CName;
+                    _bean.Description = output.CDescription;
+                    _bean.EntryReq = output.CRequirements;
+                    _bean.Tarif = output.CTarif;
+                    _bean.University = "Sheffield Hallam";
+                    _bean.NSS = output.CNSS;
+                    _bean.Qualification = output.CDegree;
+                    _beans.Add(_bean);
+                }
+                return _beans;
+            }
+            else
+            {
+                return null;
+            }
         }
-
-        public IList<SHUCourse> GetSHHCourses()
-        {
-            IList<SHUCourse> _output = _proxy2.SHUCourses().ToList();
-            return _output;
-        }
-
-
-    //    public IList<NAA.Data.BEANS.CoursesBEAN> getCourses(int Id)
-    //    {
-    //        List<NAA.Data.BEANS.CoursesBEAN> _bean = new List<NAA.Data.BEANS.CoursesBEAN>();
-    //        if (Id == 1)
-    //        {
-    //            IList<Course> _output = _proxy.SheffCourses().ToList();
-    //            foreach (var output in _output)
-    //            {
-
-    //            }
-    //}
-    //    }
     }
 }

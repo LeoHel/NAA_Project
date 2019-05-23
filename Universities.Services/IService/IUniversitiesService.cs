@@ -8,10 +8,10 @@ namespace Universities.Services.IService
 {
     interface IUniversitiesService
     {
-        //IList<NAA.Data.BEANS.CoursesBEAN> getCourses(int Id);
+        IList<NAA.Data.BEANS.CoursesBEAN> GetCoursesForUniversity(int universityId);
 
-        IList<Sheffield.Course> GetSHCourses();
+        //IList<Sheffield.Course> GetSHCourses();
 
-        IList<Sheffield_Hallam.SHUCourse> GetSHHCourses();
+        //IList<Sheffield_Hallam.SHUCourse> GetSHHCourses();
     }
 }

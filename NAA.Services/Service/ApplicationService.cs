@@ -29,5 +29,13 @@ namespace NAA.Services.Service
         {
             return _applicationDAO.GetApplicationDetails(appId);
         }
+        public IList<University> GetUniversities()
+        {
+            return _applicationDAO.GetUniversities();
+        }
+        public void AddApplication(NAA.Data.Application application)
+        {
+            _applicationDAO.AddApplication(application);
+        }
     }
 }

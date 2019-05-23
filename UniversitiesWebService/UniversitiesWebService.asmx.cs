@@ -36,14 +36,14 @@ namespace UniversitiesWebService
             return "Hello World";
         }
 
-        [WebMethod]
-        public List<Universities.Services.Sheffield.Course> GetCourses()
-        {
-           // List<NAA.Data.Courses.Courses> _newList = new List<_universityService.(_universityService.GetSHCourses());
+        //[WebMethod]
+        //public List<Universities.Services.Sheffield.Course> GetCourses()
+        //{
+        //   // List<NAA.Data.Courses.Courses> _newList = new List<_universityService.(_universityService.GetSHCourses());
 
-            List<Universities.Services.Sheffield.Course> _newList = new List<Universities.Services.Sheffield.Course>(_universityService.GetSHCourses());
-            //List<NAA.Data.Courses.Courses> _newList = new List<NAA.Data.Courses.Courses> _universityService.G
-            return _newList;
-        }
+        //    //List<Universities.Services.Sheffield.Course> _newList = new List<Universities.Services.Sheffield.Course>(_universityService.GetSHCourses());
+        //    //List<NAA.Data.Courses.Courses> _newList = new List<NAA.Data.Courses.Courses> _universityService.G
+        //    //return _newList;
+        //}
     }
 }

@@ -43,5 +43,28 @@ namespace NAA.Data.DAO
                    select apps;
             return _app.ToList<Application>().First();
         }
+        public IList<NAA.Data.University> GetUniversities()
+        {
+            IQueryable<University> _uni;
+            _uni = from uni
+                   in _context.University
+                   select uni;
+            return _uni.ToList<University>();
+        }
+        public void AddApplication(NAA.Data.Application application)
+        {
+            Application app = new Application();
+            app.ApplicantId = application.ApplicantId;
+            app.CourseName = application.CourseName;
+            app.Firm = application.Firm;
+            app.Id = application.Id;
+            app.PersonalStatement = application.PersonalStatement;
+            app.TeacherContactDetails = application.TeacherContactDetails;
+            app.TeacherReference = application.TeacherReference;
+            app.UniversityId = application.UniversityId;
+            app.UniversityOffer = application.UniversityOffer;
+            _context.Application.Add(app);
+            _context.SaveChanges();
+        }
     }
 }
