@@ -40,8 +40,20 @@ namespace NAA.Services.Service
             _applicantDAO.EditProfile(applicant);
         }
         
-        
-        
+        public IList<Application> GetApplications(int id)
+        {
+            return _applicantDAO.GetApplications(id);
+        }
+        public Application GetApplication(int id)
+        {
+            return _applicantDAO.GetApplication(id);
+        }
+
+
+        public void DeleteApplication(Application application)
+        {
+            _applicantDAO.DeleteApplication(application);
+        }
 
 
 

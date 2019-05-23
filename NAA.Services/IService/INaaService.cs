@@ -20,5 +20,13 @@ namespace NAA.Services.IService
         Applicant GetCurrentProfile(int id);
 
         void CreateProfile(Applicant applicant);
+
+        IList<Application> GetApplications(int id);
+
+        Application GetApplication(int id);
+
+
+        void DeleteApplication(Application application);
+
     }
 }

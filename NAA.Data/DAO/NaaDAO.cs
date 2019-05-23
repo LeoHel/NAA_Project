@@ -57,7 +57,41 @@ namespace NAA.Data.DAO
 
         }
 
-       
+        public IList<Application>GetApplications(int id)
+        {
+            IQueryable<Application> _applications;
+            _applications = from application
+                            in _context.Application
+                            where application.ApplicantId == id
+                            select application;
+            return _applications.ToList<Application>();
+
+
+        }
+
+        public Application GetApplication(int id)
+        {
+            IQueryable<Application> _applications;
+            _applications = from application
+                            in _context.Application
+                            where application.Id == id
+                            select application;
+            return _applications.ToList<Application>().FirstOrDefault();
+
+
+        }
+
+
+        public void DeleteApplication(Application application)
+        {
+            Application app = GetApplication(application.Id);
+            _context.Application.Remove(app);
+            _context.SaveChanges();
+
+
+        }
+
+        
         
 
 

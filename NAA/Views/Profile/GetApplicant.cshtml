@@ -41,9 +41,10 @@
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditProfile", new { id=item.Id,Controller = "ProfileAdmin" })|
-           
-            
+            @Html.ActionLink("Edit", "EditProfile", new { id = item.Id, Controller = "ProfileAdmin" }) | 
+            @Html.ActionLink("Applications", "GetApplications", new { id = item.Id, Controller = "Applications" })
+
+
         </td>
     </tr>
 }

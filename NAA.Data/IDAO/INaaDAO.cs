@@ -16,8 +16,11 @@ namespace NAA.Data.IDAO
 
         void CreateProfile(Applicant applicant);
 
-        
+        IList<Application> GetApplications(int id);
 
+        void DeleteApplication(Application application);
+
+        Application GetApplication(int id);
 
 
 
