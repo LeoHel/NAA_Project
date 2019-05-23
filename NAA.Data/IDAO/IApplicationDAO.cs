@@ -9,6 +9,6 @@ namespace NAA.Data.IDAO
     public interface IApplicationDAO
     {
         IList<NAA.Data.Application> GetUniversityApplications(int uniID);
-        void ChangeUniversityOffer(int appId, char offer);
+        void ChangeUniversityOffer(int appId, string offer);
     }
 }

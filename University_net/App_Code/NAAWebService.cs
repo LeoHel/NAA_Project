@@ -31,4 +31,10 @@ public class NAAWebService : System.Web.Services.WebService
         return _res.ToList<Application>();
     }
 
+    [WebMethod]
+    public void ChangeUniversityOffer(int appId, string offer)
+    {
+        _applicationService.ChangeUniversityOffer(appId, offer);
+    }
+
 }

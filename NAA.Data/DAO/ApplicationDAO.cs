@@ -23,9 +23,16 @@ namespace NAA.Data.DAO
                             select applications;
             return _applications.ToList<Application>();
         }
-        public void ChangeUniversityOffer(int appId, char offer)
+        public void ChangeUniversityOffer(int appId, string offer)
         {
-
+            IQueryable<Application> _application;
+            _application = from applications
+                           in _context.Application
+                           where applications.Id == appId
+                           select applications;
+            Application _app = _application.ToList<Application>().First();
+            _app.UniversityOffer = offer;
+            _context.SaveChanges();
         }
     }
 }
