@@ -15,6 +15,18 @@ namespace NAA.Controllers
             _UniversityService = new Universities.Services.Service.UniversitiesService();
         }
 
+        [HttpGet]
+        public ActionResult DisplayUniversities()
+        {
+            List<SelectListItem> universitiesList = new List<SelectListItem>();
+            {
+                universitiesList.Add(
+                    new SelectListItem()
+                    {
+                        Text = "blub";
+                    });
+            }
+        }
         public ActionResult Courses()
         {
             return View(_UniversityService.GetSHCourses());
