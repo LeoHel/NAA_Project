@@ -1,0 +1,51 @@
+﻿@model IEnumerable<NAA.Data.Applicant>
+
+@{
+    ViewBag.Title = "GetApplicant";
+}
+
+<h2>GetApplicant</h2>
+
+<p>
+    @Html.ActionLink("Create Profile", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicantName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicantAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplicantName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplicantAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditProfile", new { id=item.Id,Controller = "ProfileAdmin" })|
+           
+            
+        </td>
+    </tr>
+}
+
+</table>
