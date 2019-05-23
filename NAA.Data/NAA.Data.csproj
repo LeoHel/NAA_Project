@@ -55,8 +55,9 @@
     <Compile Include="Application.cs">
       <DependentUpon>NAADataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="BEANS\CoursesBEAN.cs" />
+    <Compile Include="DAO\ApplicationDAO.cs" />
+    <Compile Include="IDAO\IApplicationDAO.cs" />
     <Compile Include="NAADataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -105,8 +106,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAO\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
