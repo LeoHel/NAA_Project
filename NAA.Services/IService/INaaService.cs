@@ -19,5 +19,6 @@ namespace NAA.Services.IService
 
         Applicant GetCurrentProfile(int id);
 
+        void CreateProfile(Applicant applicant);
     }
 }

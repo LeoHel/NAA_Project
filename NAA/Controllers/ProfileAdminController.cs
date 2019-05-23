@@ -31,20 +31,22 @@ namespace NAA.Controllers
         }
 
         // GET: ProfileAdmin/Create
-        public ActionResult Create()
+        public ActionResult CreateProfile(string name)
         {
+
             return View();
+
         }
 
         // POST: ProfileAdmin/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult CreateProfile(Applicant applicant)
         {
             try
             {
                 // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                _naaService.CreateProfile(applicant);
+                return RedirectToAction("GetApplicant", new {Controller = "Profile"});
             }
             catch
             {

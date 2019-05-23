@@ -14,7 +14,9 @@ namespace NAA.Data.IDAO
 
         Applicant GetCurrentProfile(int id);
 
-        //void CreateProfile(Applicant applicant);
+        void CreateProfile(Applicant applicant);
+
+        
 
 
 

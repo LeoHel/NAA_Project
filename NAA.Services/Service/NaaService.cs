@@ -18,10 +18,10 @@ namespace NAA.Services.Service
             _applicantDAO = new NaaDAO();
         }
 
-        /*public void CreateProfile(Applicant applicant)
+        public void CreateProfile(Applicant applicant)
         {
             _applicantDAO.CreateProfile(applicant);
-        }*/
+        }
 
         public IList<Applicant> GetApplicant()
         {
@@ -40,7 +40,7 @@ namespace NAA.Services.Service
             _applicantDAO.EditProfile(applicant);
         }
         
-            
+        
         
 
 

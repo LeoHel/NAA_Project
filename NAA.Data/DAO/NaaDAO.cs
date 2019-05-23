@@ -27,12 +27,12 @@ namespace NAA.Data.DAO
             _context.SaveChanges();
         }
         
-        /*public void CreateProfile(Applicant applicant)
+        public void CreateProfile(Applicant applicant)
         {
             _context.Applicant.Add(applicant);
             _context.SaveChanges();
 
-        }*/
+        }
         
         
         
@@ -57,8 +57,7 @@ namespace NAA.Data.DAO
 
         }
 
-
-        
+       
         
 
 
