@@ -275,6 +275,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NAA.Data\NAA.Data.csproj">
+      <Project>{88535a0b-2b76-4bb3-8e5c-2307f4999008}</Project>
+      <Name>NAA.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NAA.Services\NAA.Services.csproj">
+      <Project>{dc15e583-ac4c-40fe-b4f2-2663b2873619}</Project>
+      <Name>NAA.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
