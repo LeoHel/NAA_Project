@@ -104,5 +104,10 @@ namespace NAA.Controllers
                 return View();
             }
         }
+        public ActionResult ConfirmApplication(int appId, int userId)
+        {
+            _naaService.ConfirmApplication(appId);
+            return RedirectToAction("GetApplications", new { id = userId });
+        }
     }
 }

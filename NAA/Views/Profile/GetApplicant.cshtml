@@ -41,8 +41,9 @@
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditProfile", new { id = item.Id, Controller = "ProfileAdmin" }) | 
-            @Html.ActionLink("Applications", "GetApplications", new { id = item.Id, Controller = "Applications" })
+            @Html.ActionLink("Edit", "EditProfile", new { id = item.Id, Controller = "ProfileAdmin" }) |
+            @Html.ActionLink("Applications", "GetApplications", new { id = item.Id, Controller = "Applications" }) |
+            @Html.ActionLink("Create New Application", "StartApplication", new { applicantId = item.Id, controller = "Application" })
 
 
         </td>

@@ -22,6 +22,8 @@ namespace NAA.Data.IDAO
 
         Application GetApplication(int id);
 
+        void ConfirmApplication(int appId);
+
 
 
 

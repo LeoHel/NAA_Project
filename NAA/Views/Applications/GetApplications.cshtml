@@ -7,7 +7,7 @@
 <h2>GetApplications</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @*@Html.ActionLink("Create New", "Create")*@    
 </p>
 <table class="table">
     <tr>
@@ -66,8 +66,15 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id })|
-            @Html.ActionLink("Delete", "DeleteApplication", new { id=item.Id })
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @if (item.UniversityOffer == "U" || item.UniversityOffer == "C" || item.UniversityOffer == "P" || item.UniversityOffer == "R")
+            {
+            @Html.ActionLink("Delete", "DeleteApplication", new { id = item.Id })
+            }
+            @if (item.UniversityOffer == "U" || item.UniversityOffer == "C")
+            {
+            @Html.ActionLink("Confirm", "ConfirmApplication", new { appId = item.Id, userId = item.ApplicantId})
+            }
         </td>
     </tr>
 }

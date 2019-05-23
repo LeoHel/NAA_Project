@@ -58,7 +58,7 @@ namespace NAA.Controllers
             try
             {
                 _applicationService.AddApplication(application);
-                return RedirectToAction("GetApplications", new { id = application.ApplicantId, Controller = "Applicant" });
+                return RedirectToAction("GetApplications", new { id = application.ApplicantId, Controller = "Applications" });
             }
             catch
             {

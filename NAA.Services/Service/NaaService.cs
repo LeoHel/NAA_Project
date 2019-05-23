@@ -55,7 +55,10 @@ namespace NAA.Services.Service
             _applicantDAO.DeleteApplication(application);
         }
 
-
+        public void ConfirmApplication(int appId)
+        {
+            _applicantDAO.ConfirmApplication(appId);
+        }
 
     }
 }

@@ -51,6 +51,7 @@ namespace NAA.Data.DAO
             IQueryable<Applicant> _applicants;
             _applicants = from applicant
                           in _context.Applicant
+                          where applicant.Id == id
                           select applicant;
             return _applicants.ToList<Applicant>().First();
 
@@ -91,6 +92,12 @@ namespace NAA.Data.DAO
 
         }
 
+        public void ConfirmApplication(int appId)
+        {
+            Application _application = GetApplication(appId);
+            _application.Firm = true;
+            _context.SaveChanges();
+        }
         
         
 

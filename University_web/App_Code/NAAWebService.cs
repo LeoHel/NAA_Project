@@ -32,9 +32,14 @@ public class NAAWebService : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void ChangeUniversityOffer(int appId, string offer)
+    public string ChangeUniversityOffer(int appId, string offer, int uniId)
     {
-        _applicationService.ChangeUniversityOffer(appId, offer);
+        if ((offer == "C" || offer == "U" || offer == "P" || offer == "R") && uniId == _applicationService.GetApplicationDetails(appId).UniversityId)
+        {
+            _applicationService.ChangeUniversityOffer(appId, offer);
+            return "OK";
+        }
+        else return "Error";
     }
 
     [WebMethod]
