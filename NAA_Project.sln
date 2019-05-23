@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAA.Data", "NAA.Data\NAA.Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAA.Services", "NAA.Services\NAA.Services.csproj", "{DC15E583-AC4C-40FE-B4F2-2663B2873619}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universities.Services", "Universities.Services\Universities.Services.csproj", "{A3E71F63-B138-4D33-8E23-3F21F8CAD268}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversitiesWebService", "UniversitiesWebService\UniversitiesWebService.csproj", "{6BB47181-59E9-489D-856E-B8A6AB3E4C00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{DC15E583-AC4C-40FE-B4F2-2663B2873619}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC15E583-AC4C-40FE-B4F2-2663B2873619}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC15E583-AC4C-40FE-B4F2-2663B2873619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3E71F63-B138-4D33-8E23-3F21F8CAD268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3E71F63-B138-4D33-8E23-3F21F8CAD268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3E71F63-B138-4D33-8E23-3F21F8CAD268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3E71F63-B138-4D33-8E23-3F21F8CAD268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BB47181-59E9-489D-856E-B8A6AB3E4C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BB47181-59E9-489D-856E-B8A6AB3E4C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BB47181-59E9-489D-856E-B8A6AB3E4C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BB47181-59E9-489D-856E-B8A6AB3E4C00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

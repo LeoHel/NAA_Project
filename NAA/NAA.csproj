@@ -192,6 +192,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UniversityController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -258,6 +259,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\University\Courses.cshtml" />
+    <Content Include="Views\University\SHUCourses.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -283,6 +286,10 @@
     <ProjectReference Include="..\NAA.Services\NAA.Services.csproj">
       <Project>{dc15e583-ac4c-40fe-b4f2-2663b2873619}</Project>
       <Name>NAA.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Universities.Services\Universities.Services.csproj">
+      <Project>{a3e71f63-b138-4d33-8e23-3f21f8cad268}</Project>
+      <Name>Universities.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
