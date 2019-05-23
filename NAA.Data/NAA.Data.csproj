@@ -58,6 +58,8 @@
     <Compile Include="BEANS\CoursesBEAN.cs" />
     <Compile Include="DAO\ApplicationDAO.cs" />
     <Compile Include="IDAO\IApplicationDAO.cs" />
+    <Compile Include="DAO\NaaDAO.cs" />
+    <Compile Include="IDAO\INaaDAO.cs" />
     <Compile Include="NAADataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
