@@ -9,6 +9,28 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAA.Data", "NAA.Data\NAA.Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAA.Services", "NAA.Services\NAA.Services.csproj", "{DC15E583-AC4C-40FE-B4F2-2663B2873619}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "University_net", "University_net\", "{82DA42A2-9C5E-4EF9-BE63-6F2BCCF6FB46}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_65214"
+		Debug.AspNetCompiler.PhysicalPath = "University_net\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65214\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_65214"
+		Release.AspNetCompiler.PhysicalPath = "University_net\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_65214\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "65214"
+		SlnRelativePath = "University_net\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +49,10 @@ Global
 		{DC15E583-AC4C-40FE-B4F2-2663B2873619}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC15E583-AC4C-40FE-B4F2-2663B2873619}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC15E583-AC4C-40FE-B4F2-2663B2873619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82DA42A2-9C5E-4EF9-BE63-6F2BCCF6FB46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DA42A2-9C5E-4EF9-BE63-6F2BCCF6FB46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82DA42A2-9C5E-4EF9-BE63-6F2BCCF6FB46}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DA42A2-9C5E-4EF9-BE63-6F2BCCF6FB46}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
