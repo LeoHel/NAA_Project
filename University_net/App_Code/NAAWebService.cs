@@ -37,4 +37,9 @@ public class NAAWebService : System.Web.Services.WebService
         _applicationService.ChangeUniversityOffer(appId, offer);
     }
 
+    [WebMethod]
+    public Application GetApplicationDetails(int appId)
+    {
+        return _applicationService.GetApplicationDetails(appId);
+    }
 }

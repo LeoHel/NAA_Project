@@ -10,5 +10,6 @@ namespace NAA.Data.IDAO
     {
         IList<NAA.Data.Application> GetUniversityApplications(int uniID);
         void ChangeUniversityOffer(int appId, string offer);
+        Application GetApplicationDetails(int appId);
     }
 }

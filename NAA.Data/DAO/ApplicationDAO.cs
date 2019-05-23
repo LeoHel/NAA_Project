@@ -34,5 +34,14 @@ namespace NAA.Data.DAO
             _app.UniversityOffer = offer;
             _context.SaveChanges();
         }
+        public Application GetApplicationDetails(int appId)
+        {
+            IQueryable<Application> _app;
+            _app = from apps
+                   in _context.Application
+                   where apps.Id == appId
+                   select apps;
+            return _app.ToList<Application>().First();
+        }
     }
 }

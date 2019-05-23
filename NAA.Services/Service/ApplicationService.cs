@@ -25,5 +25,9 @@ namespace NAA.Services.Service
         {
             _applicationDAO.ChangeUniversityOffer(appId, offer);
         }
+        public Application GetApplicationDetails(int appId)
+        {
+            return _applicationDAO.GetApplicationDetails(appId);
+        }
     }
 }

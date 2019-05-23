@@ -14,5 +14,6 @@ namespace NAA.Services.IService
     {
         IList<NAA.Data.Application> GetUniversityApplications(int uniID);
         void ChangeUniversityOffer(int appId, string offer);
+        Application GetApplicationDetails(int appId);
     }
 }
