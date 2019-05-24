@@ -62,7 +62,9 @@ namespace NAA.Controllers
         // GET: Applications/Edit/5
         public ActionResult EditApplication(int id)
         {
-            return View(_naaService.GetCurrentApplication(id));
+            Application app = _naaService.GetApplication(id);
+
+            return View(_naaService.GetApplication(id));
         }
 
         // POST: Applications/Edit/5
@@ -71,8 +73,10 @@ namespace NAA.Controllers
         {
             try
             {
+                Application app = application;
+
                 _naaService.EditApplication(application);
-                return RedirectToAction("GetApplicant", new {Controller = "Profile" });
+                return RedirectToAction("GetApplications", new {id = application.ApplicantId, Controller = "Applications" });
             }
             catch
             {
@@ -84,7 +88,6 @@ namespace NAA.Controllers
         [HttpGet]
         public ActionResult DeleteApplication(int id)
         {
-            
             return View(_naaService.GetApplication(id));
         }
 
