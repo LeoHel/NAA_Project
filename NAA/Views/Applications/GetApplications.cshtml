@@ -11,9 +11,9 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.ApplicantId)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.CourseName)
         </th>
@@ -40,9 +40,9 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.ApplicantId)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.CourseName)
         </td>
@@ -66,12 +66,12 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @if (item.UniversityOffer == "U" || item.UniversityOffer == "C" || item.UniversityOffer == "P" || item.UniversityOffer == "R")
+            @Html.ActionLink("Details", "Details", new { id=item.Id })
+            @if (item.UniversityOffer == null && item.Firm == null)
             {
             @Html.ActionLink("Delete", "DeleteApplication", new { id = item.Id })
             }
-            @if (item.UniversityOffer == "U" || item.UniversityOffer == "C")
+            @if ((item.UniversityOffer == "U" || item.UniversityOffer == "C") && item.Firm == null)
             {
             @Html.ActionLink("Confirm", "ConfirmApplication", new { appId = item.Id, userId = item.ApplicantId})
             }

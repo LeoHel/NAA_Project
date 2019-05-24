@@ -60,5 +60,20 @@ namespace NAA.Services.Service
             _applicantDAO.ConfirmApplication(appId);
         }
 
+        public Boolean ApplicantApplicationNumber(int appId)
+        {
+           return _applicantDAO.ApplicantApplicationNumber(appId);
+        }
+
+        public IList<string> GetUsedCourses(int appId)
+        {
+            return _applicantDAO.GetUsedCourses(appId);
+        }
+
+        public Boolean GetFirmApplication(int appId)
+        {
+            return _applicantDAO.GetFirmApplication(appId);
+        }
+
     }
 }

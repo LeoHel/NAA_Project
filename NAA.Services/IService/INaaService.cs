@@ -28,6 +28,8 @@ namespace NAA.Services.IService
         void DeleteApplication(Application application);
 
         void ConfirmApplication(int appId);
-
+        Boolean ApplicantApplicationNumber(int appId);
+        IList<string> GetUsedCourses(int appId);
+        Boolean GetFirmApplication(int appId);
     }
 }

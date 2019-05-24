@@ -10,24 +10,31 @@ namespace NAA.Controllers
     public class ApplicationController : Controller
     {
         private NAA.Services.IService.IApplicationService _applicationService;
+        private NAA.Services.IService.INaaService _naaService;
         public ApplicationController()
         {
             _applicationService = new NAA.Services.Service.ApplicationService();
+            _naaService = new NAA.Services.Service.NaaService();
         }
         public ActionResult StartApplication(int applicantId)
         {
-            List<SelectListItem> universityList = new List<SelectListItem>();
-            foreach (var uni in _applicationService.GetUniversities())
+            if (_naaService.ApplicantApplicationNumber(applicantId))
             {
-                universityList.Add(
-                    new SelectListItem()
-                    {
-                        Text = uni.UniversityName,
-                        Value = uni.UniversityId.ToString()
-                    });
+                List<SelectListItem> universityList = new List<SelectListItem>();
+                foreach (var uni in _applicationService.GetUniversities())
+                {
+                    universityList.Add(
+                        new SelectListItem()
+                        {
+                            Text = uni.UniversityName,
+                            Value = uni.UniversityId.ToString()
+                        });
+                }
+                ViewBag.universityList = universityList;
+                return View();
             }
-            ViewBag.universityList = universityList;
-            return View();
+            return RedirectToAction("GetApplicant", new { Controller = "Profile" });
+            
         }
         [HttpPost]
         public ActionResult StartApplication(NAA.Data.Application application)
@@ -39,7 +46,7 @@ namespace NAA.Controllers
             Universities.Services.Service.UniversitiesService _universitiesService = new Universities.Services.Service.UniversitiesService();
             List<SelectListItem> courseList = new List<SelectListItem>();
             
-            
+            IList<string> courses = _naaService.GetUsedCourses(applicantId);
                 foreach (var course in _universitiesService.GetCoursesForUniversity(universityId))
                 {
                     courseList.Add(

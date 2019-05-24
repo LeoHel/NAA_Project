@@ -99,9 +99,47 @@ namespace NAA.Data.DAO
             _context.SaveChanges();
         }
         
-        
+        public Boolean ApplicantApplicationNumber(int appId)
+        {
+            IQueryable<Application> _appl;
+            _appl = from apps
+                    in _context.Application
+                    where apps.ApplicantId == appId
+                    select apps;
+            if (_appl.Count() < 5) return true;
+            else return false;
+            }
 
+        public IList<string> GetUsedCourses(int appId)
+        {
+            IList<string> result = new List<string>();
+            IQueryable<Application> _appl;
+            _appl = from apps
+                    in _context.Application
+                    where apps.ApplicantId == appId
+                    select apps;
+            foreach(var apps in _appl)
+            {
+                result.Add(apps.CourseName);
+            }
+            return result;
+        }
 
+        public Boolean GetFirmApplication(int appId)
+        {
+            IQueryable<Application> _appl;
+            _appl = from apps
+                    in _context.Application
+                    where apps.ApplicantId == appId
+                    select apps;
+            Boolean result=false;
+            foreach(var appli in _appl)
+            {
+                if (appli.Firm == true) return true;
+                else result=false;
+            }
+            return result;
+        }
 
     }
 }

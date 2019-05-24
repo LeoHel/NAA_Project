@@ -106,7 +106,10 @@ namespace NAA.Controllers
         }
         public ActionResult ConfirmApplication(int appId, int userId)
         {
-            _naaService.ConfirmApplication(appId);
+            if (!_naaService.GetFirmApplication(userId))
+            {
+                _naaService.ConfirmApplication(appId);
+            }
             return RedirectToAction("GetApplications", new { id = userId });
         }
     }
