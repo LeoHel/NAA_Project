@@ -271,6 +271,7 @@
     <Content Include="Views\Applications\DeleteApplication.cshtml" />
     <Content Include="Views\Application\AddApplication.cshtml" />
     <Content Include="Views\Application\StartApplication.cshtml" />
+    <Content Include="Views\Applications\EditApplication.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

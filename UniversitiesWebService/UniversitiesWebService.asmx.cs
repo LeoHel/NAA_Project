@@ -6,7 +6,7 @@ using System.Web.Services;
 using NAA.Data;
 using NAA.Services;
 //using NAA.Services.Service;
-using Universities.Services;
+//using Universities.Services;
 //using Universities.Services.Service;
 //using Universities.Services.Sheffield;
 
@@ -22,13 +22,13 @@ namespace UniversitiesWebService
     // [System.Web.Script.Services.ScriptService]
     public class UniversitiesWebService : System.Web.Services.WebService
     {
-        private Universities.Services.Service.UniversitiesService _universityService;
+        //private Universities.Services.Service.UniversitiesService _universityService;
 
-        public UniversitiesWebService()
-        {
-            _universityService = new Universities.Services.Service.UniversitiesService();
+        //public UniversitiesWebService()
+        //{
+        //    _universityService = new Universities.Services.Service.UniversitiesService();
             
-        }
+        //}
 
         [WebMethod]
         public string HelloWorld()
