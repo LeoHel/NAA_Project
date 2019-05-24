@@ -7,13 +7,13 @@
 <h2>GetApplications</h2>
 
 <p>
-    @*@Html.ActionLink("Create New", "Create")*@    
+    @*@Html.ActionLink("Create New", "Create")*@
 </p>
 <table class="table">
     <tr>
         @*<th>
-            @Html.DisplayNameFor(model => model.ApplicantId)
-        </th>*@
+                @Html.DisplayNameFor(model => model.ApplicantId)
+            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.CourseName)
         </th>
@@ -38,48 +38,53 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.ApplicantId)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.CourseName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UniversityId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PersonalStatement)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TeacherReference)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TeacherContactDetails)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UniversityOffer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Firm)
-        </td>
-        <td>
-            @if (item.UniversityOffer == null && item.Firm == null)
+    @foreach (var item in Model)
     {
-        @Html.ActionLink("Edit", "EditApplication", new { id = item.Id })
-}
-            @*@Html.ActionLink("Details", "Details", new { id = item.Id })*@
-            @if (item.UniversityOffer == null && item.Firm == null)
-    {
-        @Html.ActionLink("Delete", "DeleteApplication", new { id = item.Id }) 
-}
-            @if ((item.UniversityOffer == "U" || item.UniversityOffer == "C") && item.Firm == null)
-    {
-        @Html.ActionLink("Confirm", "ConfirmApplication", new { appId = item.Id, userId = item.ApplicantId })
-}
-        </td>
-    </tr>
-}
+        <tr>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.ApplicantId)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UniversityId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalStatement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeacherReference)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeacherContactDetails)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UniversityOffer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firm)
+            </td>
+            <td>
+                @if (item.UniversityOffer == null && item.Firm == null)
+                {
+                    @Html.ActionLink("Edit", "EditApplication", new { id = item.Id })
+                }
+                @*@Html.ActionLink("Details", "Details", new { id = item.Id })*@
+                @if (item.UniversityOffer == null && item.Firm == null)
+                {
+                    @Html.ActionLink("Delete", "DeleteApplication", new { id = item.Id })
+                }
+                @if ((item.UniversityOffer == "U" || item.UniversityOffer == "C") && item.Firm == null)
+                {
+                    @Html.ActionLink("Confirm", "ConfirmApplication", new { appId = item.Id, userId = item.ApplicantId })
+                }
+            </td>
+        </tr>
+    }
 
 </table>
+
+<div>
+        @Html.ActionLink("Back to List", "GetApplicant", new { Controller = "Profile" })
+</div>
