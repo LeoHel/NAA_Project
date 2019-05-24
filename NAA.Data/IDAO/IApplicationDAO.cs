@@ -8,9 +8,9 @@ namespace NAA.Data.IDAO
 {
     public interface IApplicationDAO
     {
-        IList<NAA.Data.Application> GetUniversityApplications(int uniID);
+        IList<NAA.Data.BEANS.ApplicationBEAN> GetUniversityApplications(int uniID);
         void ChangeUniversityOffer(int appId, string offer);
-        Application GetApplicationDetails(int appId);
+        NAA.Data.BEANS.ApplicationBEAN GetApplicationDetails(int appId);
         IList<NAA.Data.University> GetUniversities();
         void AddApplication(NAA.Data.Application application);
     }

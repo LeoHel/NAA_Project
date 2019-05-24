@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using NAA.Data;
+using NAA.Data.BEANS;
 using NAA.Services;
 using NAA.Services.Service;
 
@@ -25,16 +26,16 @@ public class NAAWebService : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public List<Application> GetUniversityApplications(int uniID)
+    public List<ApplicationBEAN> GetUniversityApplications(int uniID)
     {
-        IList<Application> _res = _applicationService.GetUniversityApplications(uniID);
-        return _res.ToList<Application>();
+        IList<ApplicationBEAN> _res = _applicationService.GetUniversityApplications(uniID);
+        return _res.ToList<ApplicationBEAN>();
     }
 
     [WebMethod]
     public string ChangeUniversityOffer(int appId, string offer, int uniId)
     {
-        if ((offer == "C" || offer == "U" || offer == "P" || offer == "R") && uniId == _applicationService.GetApplicationDetails(appId).UniversityId)
+        if ((offer == "C" || offer == "U" || offer == "P" || offer == "R") )
         {
             _applicationService.ChangeUniversityOffer(appId, offer);
             return "OK";
@@ -43,7 +44,7 @@ public class NAAWebService : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public Application GetApplicationDetails(int appId)
+    public ApplicationBEAN GetApplicationDetails(int appId)
     {
         return _applicationService.GetApplicationDetails(appId);
     }

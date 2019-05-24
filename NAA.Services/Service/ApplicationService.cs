@@ -17,7 +17,7 @@ namespace NAA.Services.Service
         {
             _applicationDAO = new ApplicationDAO();
         }
-        public IList<Application> GetUniversityApplications(int uniID)
+        public IList<ApplicationBEAN> GetUniversityApplications(int uniID)
         {
             return _applicationDAO.GetUniversityApplications(uniID);
         }
@@ -25,7 +25,7 @@ namespace NAA.Services.Service
         {
             _applicationDAO.ChangeUniversityOffer(appId, offer);
         }
-        public Application GetApplicationDetails(int appId)
+        public ApplicationBEAN GetApplicationDetails(int appId)
         {
             return _applicationDAO.GetApplicationDetails(appId);
         }

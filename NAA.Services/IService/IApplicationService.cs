@@ -12,9 +12,9 @@ namespace NAA.Services.IService
 {
     public interface IApplicationService
     {
-        IList<NAA.Data.Application> GetUniversityApplications(int uniID);
+        IList<NAA.Data.BEANS.ApplicationBEAN> GetUniversityApplications(int uniID);
         void ChangeUniversityOffer(int appId, string offer);
-        Application GetApplicationDetails(int appId);
+        ApplicationBEAN GetApplicationDetails(int appId);
         IList<NAA.Data.University> GetUniversities();
         void AddApplication(NAA.Data.Application application);
     }

@@ -14,14 +14,27 @@ namespace NAA.Data.DAO
         {
             _context = new NAAEntities();
         }
-        public IList<NAA.Data.Application> GetUniversityApplications(int uniID)
+        public IList<NAA.Data.BEANS.ApplicationBEAN> GetUniversityApplications(int uniID)
         {
-            IQueryable<Application> _applications;
+            IQueryable<ApplicationBEAN> _applications;
             _applications = from applications
                             in _context.Application
                             where applications.UniversityId == uniID
-                            select applications;
-            return _applications.ToList<Application>();
+                            select new ApplicationBEAN
+                            {
+                                Id = applications.Id,
+                                ApplicantName = (from _apps in _context.Application
+                                                from _appl in _context.Applicant
+                                                where _apps.ApplicantId == _appl.Id
+                                                select _appl.ApplicantName).FirstOrDefault(),
+                                CourseName = applications.CourseName,
+                                PersonalStatement = applications.PersonalStatement,
+                                TeacherReference = applications.TeacherReference,
+                                TeacherContactDetails = applications.TeacherContactDetails,
+                                UniversityOffer = applications.UniversityOffer,
+                                Firm = applications.Firm
+                            };
+            return _applications.ToList<ApplicationBEAN>();
         }
         public void ChangeUniversityOffer(int appId, string offer)
         {
@@ -34,14 +47,27 @@ namespace NAA.Data.DAO
             _app.UniversityOffer = offer;
             _context.SaveChanges();
         }
-        public Application GetApplicationDetails(int appId)
+        public ApplicationBEAN GetApplicationDetails(int appId)
         {
-            IQueryable<Application> _app;
-            _app = from apps
-                   in _context.Application
-                   where apps.Id == appId
-                   select apps;
-            return _app.ToList<Application>().First();
+            IQueryable<ApplicationBEAN> _app;
+            _app = from applications
+                            in _context.Application
+                   where applications.Id == appId
+            select new ApplicationBEAN
+            {
+                Id = applications.Id,
+                ApplicantName = (from _apps in _context.Application
+                                 from _appl in _context.Applicant
+                                 where _apps.ApplicantId == _appl.Id
+                                 select _appl.ApplicantName).FirstOrDefault(),
+                CourseName = applications.CourseName,
+                PersonalStatement = applications.PersonalStatement,
+                TeacherReference = applications.TeacherReference,
+                TeacherContactDetails = applications.TeacherContactDetails,
+                UniversityOffer = applications.UniversityOffer,
+                Firm = applications.Firm
+            };
+            return _app.ToList<ApplicationBEAN>().First();
         }
         public IList<NAA.Data.University> GetUniversities()
         {
