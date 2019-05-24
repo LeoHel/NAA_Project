@@ -29,7 +29,7 @@ namespace NAA.Services.IService
 
         void ConfirmApplication(int appId);
         Boolean ApplicantApplicationNumber(int appId);
-        IList<string> GetUsedCourses(int appId);
+        IList<string> GetUsedCourses(int appId, int uniId);
         void EditApplication(Application application);
         Application GetCurrentApplication(int id);
 

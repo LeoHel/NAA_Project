@@ -45,15 +45,28 @@ namespace NAA.Controllers
         {
             Universities.Services.Service.UniversitiesService _universitiesService = new Universities.Services.Service.UniversitiesService();
             List<SelectListItem> courseList = new List<SelectListItem>();
-            
-            IList<string> courses = _naaService.GetUsedCourses(applicantId);
-                foreach (var course in _universitiesService.GetCoursesForUniversity(universityId))
+
+
+
+            IList<string> courses = _naaService.GetUsedCourses(applicantId, universityId);
+            IList<NAA.Data.BEANS.CoursesBEAN> coursesUni = _universitiesService.GetCoursesForUniversity(universityId);
+
+            IList<string> coursesUniString = new List<string>();
+            foreach (var cours in coursesUni)
+            {
+                coursesUniString.Add(cours.Name);
+            }
+                IEnumerable<string> free;
+            free = coursesUniString.Except(courses);
+
+
+                foreach (var course in free)
                 {
                     courseList.Add(
                         new SelectListItem()
                         {
-                            Text = course.Name,
-                            Value = course.Name,
+                            Text = course,
+                            Value = course
                         });
                 }
                 ViewBag.courseList = courseList;

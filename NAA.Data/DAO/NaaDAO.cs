@@ -134,13 +134,14 @@ namespace NAA.Data.DAO
             else return false;
             }
 
-        public IList<string> GetUsedCourses(int appId)
+        public IList<string> GetUsedCourses(int appId, int uniId)
         {
             IList<string> result = new List<string>();
             IQueryable<Application> _appl;
             _appl = from apps
                     in _context.Application
                     where apps.ApplicantId == appId
+                    where apps.UniversityId == uniId
                     select apps;
             foreach(var apps in _appl)
             {

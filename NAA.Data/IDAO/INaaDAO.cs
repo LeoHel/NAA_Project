@@ -24,7 +24,7 @@ namespace NAA.Data.IDAO
 
         void ConfirmApplication(int appId);
         Boolean ApplicantApplicationNumber(int appId);
-        IList<string> GetUsedCourses(int appId);
+        IList<string> GetUsedCourses(int appId, int uniId);
         Boolean GetFirmApplication(int appId);
 
         void EditApplication(Application application);

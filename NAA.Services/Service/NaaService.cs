@@ -75,9 +75,9 @@ namespace NAA.Services.Service
             return _applicantDAO.GetCurrentApplication(id);
         }
 
-        public IList<string> GetUsedCourses(int appId)
+        public IList<string> GetUsedCourses(int appId, int uniId)
         {
-            return _applicantDAO.GetUsedCourses(appId);
+            return _applicantDAO.GetUsedCourses(appId, uniId);
         }
 
         public Boolean GetFirmApplication(int appId)
