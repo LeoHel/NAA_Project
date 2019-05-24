@@ -65,6 +65,16 @@ namespace NAA.Services.Service
            return _applicantDAO.ApplicantApplicationNumber(appId);
         }
 
+        public void EditApplication(Application application)
+        {
+            _applicantDAO.EditApplication(application);
+        }
+
+        public Application GetCurrentApplication(int id)
+        {
+            return _applicantDAO.GetCurrentApplication(id);
+        }
+
         public IList<string> GetUsedCourses(int appId)
         {
             return _applicantDAO.GetUsedCourses(appId);

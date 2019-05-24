@@ -30,6 +30,10 @@ namespace NAA.Services.IService
         void ConfirmApplication(int appId);
         Boolean ApplicantApplicationNumber(int appId);
         IList<string> GetUsedCourses(int appId);
+        void EditApplication(Application application);
+        Application GetCurrentApplication(int id);
+
+
         Boolean GetFirmApplication(int appId);
     }
 }

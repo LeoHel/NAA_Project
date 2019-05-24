@@ -27,6 +27,9 @@ namespace NAA.Data.IDAO
         IList<string> GetUsedCourses(int appId);
         Boolean GetFirmApplication(int appId);
 
+        void EditApplication(Application application);
+
+        Application GetCurrentApplication(int id);
 
     };
 }

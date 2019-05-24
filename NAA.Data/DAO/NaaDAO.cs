@@ -26,16 +26,16 @@ namespace NAA.Data.DAO
 
             _context.SaveChanges();
         }
-        
+
         public void CreateProfile(Applicant applicant)
         {
             _context.Applicant.Add(applicant);
             _context.SaveChanges();
 
         }
-        
-        
-        
+
+
+
         public IList<Applicant> GetApplicant()
         {
 
@@ -58,7 +58,7 @@ namespace NAA.Data.DAO
 
         }
 
-        public IList<Application>GetApplications(int id)
+        public IList<Application> GetApplications(int id)
         {
             IQueryable<Application> _applications;
             _applications = from application
@@ -91,6 +91,30 @@ namespace NAA.Data.DAO
 
 
         }
+
+        public void EditApplication(Application application)
+        {
+            Application appl = GetCurrentApplication(application.Id);
+            
+            appl.PersonalStatement = application.PersonalStatement;
+            appl.TeacherReference = application.TeacherReference;
+            appl.TeacherContactDetails = application.TeacherContactDetails;
+
+            _context.SaveChanges();
+        }
+
+        public Application GetCurrentApplication(int id)
+        {
+            IQueryable<Application> _appl;
+            _appl = from Application
+                          in _context.Application
+                          where Application.Id == id
+                          select Application;
+            return _appl.ToList<Application>().First();
+
+
+        }
+
 
         public void ConfirmApplication(int appId)
         {

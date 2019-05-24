@@ -155,7 +155,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="UniversitiesWebService.asmx" />
+    <None Include="UniversitiesWebService.asmx.old" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -225,7 +225,7 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="UniversitiesWebService.asmx.cs">
-      <DependentUpon>UniversitiesWebService.asmx</DependentUpon>
+      <DependentUpon>UniversitiesWebService.asmx.old</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Global.asax.cs">

@@ -60,20 +60,19 @@ namespace NAA.Controllers
         }
 
         // GET: Applications/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult EditApplication(int id)
         {
-            return View();
+            return View(_naaService.GetCurrentApplication(id));
         }
 
         // POST: Applications/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult EditApplication(Application application)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                _naaService.EditApplication(application);
+                return RedirectToAction("GetApplicant", new {Controller = "Profile" });
             }
             catch
             {
