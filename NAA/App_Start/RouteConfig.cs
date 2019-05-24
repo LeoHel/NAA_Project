@@ -16,7 +16,7 @@ namespace NAA
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Profile", action = "GetApplicant", id = UrlParameter.Optional }
+                defaults: new { controller = "ProfileAdmin", action = "CreateProfile", id = UrlParameter.Optional }
             );
         }
     }
